@@ -11,17 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *temp;
+	void	*temp;
 
 	if (nmemb == 0 || size == 0)
-	{
-		// I have to check it.
-		nmemb = 1;
-		size = 1;
-	}
-
+		return (NULL);
 	temp = malloc(nmemb * size);
 	if (temp == NULL)
 		return (NULL);
