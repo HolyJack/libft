@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*tmp;
 
@@ -21,4 +21,5 @@ void	ft_memset(void *s, int c, size_t n)
 		*tmp = c;
 		tmp++;
 	}
+	return (s);
 }

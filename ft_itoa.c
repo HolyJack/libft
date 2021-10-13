@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_itoa_minint(int n)
+static char	*ft_itoa_minint()
 {
 	char	*tmp;
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 	{
-		return (ft_itoa_minint(n));
+		return (ft_itoa_minint());
 	}
 	else
 	{

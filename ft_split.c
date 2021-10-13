@@ -17,7 +17,7 @@ static unsigned int	ft_countwords(char const *s, char c)
 	unsigned int	counter;
 	char			*str;
 
-	str = s;
+	str = (char *) s;
 	counter = 0;
 	while (*str)
 	{
@@ -46,7 +46,7 @@ static int	ft_wordlen(char *str, char c)
 	return (len);
 }
 
-static void	ft_getwords(char **array, char *str, char c, int wnbr)
+static void	ft_getwords(char **array, char *str, char c, unsigned int wnbr)
 {
 	unsigned int	index;
 	unsigned int	wordlen;
@@ -54,7 +54,7 @@ static void	ft_getwords(char **array, char *str, char c, int wnbr)
 	index = 0;
 	while (index < wnbr)
 	{
-		wordlen = ft_wordlen(str);
+		wordlen = ft_wordlen(str, c);
 		ft_strlcpy(array[index], str, wordlen);
 		str = str + wordlen;
 		while (*str && *str == c)
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 	char			*str;
 	unsigned int	wnbr;
 
-	if (s == NULL || c == NULL)
+	if (s == NULL || c == 0)
 		return (NULL);
 	str = ft_strtrim(s, &c);
 	if (str == NULL)

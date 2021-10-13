@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	nstart;
 	unsigned int	nlen;
 
-	str = s1;
+	str = (char *) s1;
 	if (str == NULL || set == NULL)
 		return (NULL);
 	while (*str && ft_strchr(set, *str))

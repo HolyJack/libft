@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	const char *s = ft_itoa(n);
+	char *s = ft_itoa(n);
 
 	ft_putstr_fd(s, fd);
 }
