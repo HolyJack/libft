@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:15:56 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/11 14:15:56 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/14 19:38:46 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	const size_t	slen = ft_strlen(src);
 
-	if (slen < size - 1)
+	if (slen + 1 < size)
 		ft_memcpy(dst, src, slen + 1);
 	else if (size != 0)
 	{

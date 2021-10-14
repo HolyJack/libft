@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:01:42 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/12 18:01:42 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/14 20:49:32 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char *s = ft_itoa(n);
+	char	*s;
 
+	s = ft_itoa(n);
 	ft_putstr_fd(s, fd);
 }

@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 15:43:42 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/14 20:36:15 by ejafer           ###   ########.fr       */
+/*   Created: 2021/10/14 22:00:14 by ejafer            #+#    #+#             */
+/*   Updated: 2021/10/14 22:08:20 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	
+	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	int		buf;
-	int		sign;
-	char	*str;
+	char	*d;
+	char	*s;
 
-	sign = 1;
-	str = (char *) nptr;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\f' || *str == '\r' || *str == '\v')
-		str++;
-	if (*str == '-')
+	d = (char *) dst;
+	s = (char *) src;
+	while (n-- > 0)
 	{
-		sign = -1;
-		str++;
+		*d = *s;
+		d++;
+		if (*s == (unsigned char) c)
+			return (d);
+		s++;
 	}
-	else if (*str == '+')
-		str++;
-	buf = 0;
-	while (ft_isdigit(*str) == 1)
-	{
-		buf *= 10;
-		buf += (*str - '0');
-		str++;
-	}
-	return (sign * buf);
+	return (NULL);
 }

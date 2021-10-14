@@ -6,20 +6,20 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:05:25 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/12 18:05:25 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/14 20:46:19 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_itoa_minint()
+static char	*ft_itoa_minint(void)
 {
 	char	*tmp;
 
 	tmp = (char *) malloc(sizeof(char) * 11 + 1);
 	if (tmp == NULL)
 		return (NULL);
-	ft_strlcpy(tmp, "-214783648", 12);
+	ft_strlcpy(tmp, "-2147483648", 13);
 	return (tmp);
 }
 
@@ -27,9 +27,8 @@ static int	ft_intlen(int n)
 {
 	int	len;
 
-	if (n == 0)
-		return (1);
-	len = 0;
+	n /= 10;
+	len = 1;
 	while (n != 0)
 	{
 		n /= 10;
@@ -38,33 +37,36 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa_rest(int n)
 {
 	char	*tmp;
 	int		nlen;
 	int		sign;
 
+	sign = 0;
+	nlen = ft_intlen(n);
+	if (n < 0)
+	{
+		n = -n;
+		sign = 1;
+	}
+	tmp = (char *) malloc(sizeof(char) * (sign + nlen + 1));
+	if (tmp == NULL)
+		return (NULL);
+	tmp[sign + nlen] = '\0';
+	while (nlen-- > 0)
+	{
+		tmp[nlen + sign] = n % 10 + '0';
+		n /= 10;
+	}
+	if (sign == 1)
+		tmp[0] = '-';
+	return (tmp);
+}
+
+char	*ft_itoa(int n)
+{
 	if (n == -2147483648)
-	{
 		return (ft_itoa_minint());
-	}
-	else
-	{
-		sign = 0;
-		nlen = ft_intlen(n);
-		if (n < 0)
-			sign = 1;
-		tmp = (char *) malloc(sizeof(char) * (sign + nlen + 1));
-		if (tmp == NULL)
-			return (NULL);
-		tmp[sign + nlen] = '\0';
-		while (nlen-- > 0)
-		{
-			tmp[nlen + sign] = n % 10 + '0';
-			n /= 10;
-		}
-		if (sign == 1)
-			tmp[0] = '-';
-		return (tmp);
-	}
+	return (ft_itoa_rest(n));
 }
