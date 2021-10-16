@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:05:25 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/14 20:46:19 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/16 20:07:58 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*ft_itoa_minint(void)
 	return (tmp);
 }
 
-static int	ft_intlen(int n)
+static unsigned int	ft_intlen(int n)
 {
 	int	len;
 
@@ -39,9 +39,9 @@ static int	ft_intlen(int n)
 
 static char	*ft_itoa_rest(int n)
 {
-	char	*tmp;
-	int		nlen;
-	int		sign;
+	char			*tmp;
+	unsigned int	nlen;
+	int				sign;
 
 	sign = 0;
 	nlen = ft_intlen(n);

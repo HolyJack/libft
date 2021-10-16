@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:55:30 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/14 18:42:03 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/16 19:27:16 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char			*d;
 	char			*s;
 
-	if (dest == NULL || src == NULL)
-		return (dest);
 	d = (char *) dest;
 	s = (char *) src;
 	if (d > s && d <= s + n)

@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 22:00:14 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/14 22:08:20 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/16 19:37:28 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void
 	{
 		*d = *s;
 		d++;
-		if (*s == (unsigned char) c)
+		if ((unsigned char) *s == (unsigned char) c)
 			return (d);
 		s++;
 	}

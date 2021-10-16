@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 19:19:20 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/15 19:19:20 by ejafer           ###   ########.fr       */
+/*   Created: 2021/10/15 19:23:05 by ejafer            #+#    #+#             */
+/*   Updated: 2021/10/16 16:25:21 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*tmp;
+
 	if (lst == NULL || del == NULL)
 		return ;
-	(*del)(lst->content);
-	free(lst);
+	while (*lst)
+	{
+		tmp = *lst;
+		(*del)((*lst)->content);
+		*lst = (*lst)->next;
+		free(tmp);
+	}
+	lst = NULL;
 }

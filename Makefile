@@ -6,7 +6,7 @@
 #    By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 20:15:28 by ejafer            #+#    #+#              #
-#    Updated: 2021/10/15 20:15:28 by ejafer           ###   ########.fr        #
+#    Updated: 2021/10/16 19:09:52 by ejafer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ SRC			=	ft_atoi.c		ft_bzero.c		ft_calloc.c\
 				ft_strrchr.c	ft_strtrim.c	ft_substr.c\
 				ft_tolower.c	ft_toupper.c	ft_memccpy.c
 
-SRC_BONUS	=	ft_lstnew_bonus.c		ft_lstadd_front_bonus.c\
-				ft_lstsize_bonus.c		ft_lstlast_bonus.c\
-				ft_lstadd_back_bonus.c	ft_lstclear_bonus.c\
-				ft_lstiter_bonus.c		ft_lstmap_bonus.c\
-				ft_lstdelone_bonus.c
+SRC_BONUS	=	ft_lstnew.c			ft_lstadd_front.c\
+				ft_lstsize.c		ft_lstlast.c\
+				ft_lstadd_back.c	ft_lstclear.c\
+				ft_lstiter.c		ft_lstmap.c\
+				ft_lstdelone.c
 
 
 OBJ			=	$(SRC:.c=.o)
@@ -56,3 +56,5 @@ fclean: clean
 	@rm -f ${TRGT}
 
 re:	fclean all
+
+.PHONY	: re fclean clean bonus all

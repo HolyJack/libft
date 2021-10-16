@@ -6,13 +6,15 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 14:18:56 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/10 14:18:56 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/16 21:24:46 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	if (c < 32 || c == 127)
+	if (c <= 31 || c >= 127)
 		return (0);
-	return (1);
+	return (c);
 }
