@@ -9,6 +9,7 @@
 /*   Updated: 2021/10/10 16:17:27 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
