@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:05:25 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/16 20:07:58 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:54:52 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*ft_itoa_minint(void)
 {
 	char	*tmp;
 
-	tmp = (char *) malloc(sizeof(char) * 11 + 1);
+	tmp = (char *) malloc(sizeof(char) * 13);
 	if (tmp == NULL)
 		return (NULL);
 	ft_strlcpy(tmp, "-2147483648", 13);

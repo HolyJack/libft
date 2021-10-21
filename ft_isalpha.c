@@ -6,9 +6,11 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 13:58:05 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/10 13:58:05 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:33:51 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_islower(int c)
 {

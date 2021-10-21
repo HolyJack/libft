@@ -6,20 +6,20 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:43:42 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/16 22:32:19 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:30:40 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *s)
 {
 	int		buf;
 	int		sign;
 	char	*str;
 
 	sign = 1;
-	str = (char *) nptr;
+	str = (char *) s;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 		|| *str == '\f' || *str == '\r' || *str == '\v')
 		str++;

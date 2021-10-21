@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 19:13:39 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/14 21:08:09 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/18 19:40:59 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*nstr;
+	char	*nstr;
 	size_t	s1_len;
 	size_t	s2_len;
 
