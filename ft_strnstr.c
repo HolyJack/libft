@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:59:01 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/16 21:37:23 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/22 20:48:48 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (hstr);
 	while (*hstr && len-- > 0)
 	{
-		slen = len;
+		slen = len + 1;
 		start = hstr;
 		while (*hstr == *nstr && slen-- > 0)
 		{
