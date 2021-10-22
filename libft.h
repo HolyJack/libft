@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:52:41 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/16 19:14:11 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/22 17:17:39 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void	*ft_calloc(size_t nmemb, size_t size);
 

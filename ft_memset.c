@@ -6,9 +6,10 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:23 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/10 15:46:23 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/22 17:30:29 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
