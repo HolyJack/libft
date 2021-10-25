@@ -6,7 +6,7 @@
 #    By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 20:15:28 by ejafer            #+#    #+#              #
-#    Updated: 2021/10/18 19:05:30 by ejafer           ###   ########.fr        #
+#    Updated: 2021/10/22 19:36:48 by ejafer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC		=	ft_atoi.c		ft_bzero.c		ft_calloc.c\
 			ft_strlcpy.c	ft_strlen.c		ft_strmapi.c\
 			ft_strncmp.c	ft_strnstr.c	ft_strnstr.c\
 			ft_strrchr.c	ft_strtrim.c	ft_substr.c\
-			ft_tolower.c	ft_toupper.c	ft_memccpy.c
+			ft_tolower.c	ft_toupper.c
 
 SRC_B	=	ft_lstnew_bonus.c		ft_lstadd_front_bonus.c\
 			ft_lstsize_bonus.c		ft_lstlast_bonus.c\
