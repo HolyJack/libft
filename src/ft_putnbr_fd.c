@@ -28,7 +28,7 @@ static unsigned int	ft_intlen(int n)
 
 static void	ft_putnbr_fd2(int n, int fd)
 {
-	unsigned int	len;
+	int				len;
 	char			buf[11];
 	char			*iter;
 

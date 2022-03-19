@@ -6,7 +6,7 @@
 #    By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 20:15:28 by ejafer            #+#    #+#              #
-#    Updated: 2021/10/22 19:36:48 by ejafer           ###   ########.fr        #
+#    Updated: 2022/01/08 20:55:07 by ejafer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,53 +14,57 @@ NAME	=	libft.a
 
 HDR		= 	libft.h
 
-SRC		=	ft_atoi.c		ft_bzero.c		ft_calloc.c\
-			ft_isalnum.c	ft_isalpha.c	ft_isascii.c\
-			ft_isdigit.c	ft_isprint.c	ft_itoa.c\
-			ft_memchr.c		ft_memcmp.c		ft_memcpy.c\
-			ft_memmove.c	ft_memset.c		ft_putchar_fd.c\
-			ft_putendl_fd.c	ft_putnbr_fd.c	ft_putstr_fd.c\
-			ft_split.c		ft_strchr.c		ft_strdup.c\
-			ft_striteri.c	ft_strjoin.c	ft_strlcat.c\
-			ft_strlcpy.c	ft_strlen.c		ft_strmapi.c\
-			ft_strncmp.c	ft_strnstr.c	ft_strnstr.c\
-			ft_strrchr.c	ft_strtrim.c	ft_substr.c\
-			ft_tolower.c	ft_toupper.c
+NAMES	=	ft_atoi			ft_bzero		ft_calloc\
+			ft_isalnum		ft_isalpha		ft_isascii\
+			ft_isdigit		ft_isprint		ft_itoa\
+			ft_memchr		ft_memcmp		ft_memcpy\
+			ft_memmove		ft_memset		ft_putchar_fd\
+			ft_putendl_fd	ft_putnbr_fd	ft_putstr_fd\
+			ft_split		ft_strchr		ft_strdup\
+			ft_striteri		ft_strjoin		ft_strlcat\
+			ft_strlcpy		ft_strlen		ft_strmapi\
+			ft_strncmp		ft_strnstr		ft_nbrlen\
+			ft_strrchr		ft_strtrim		ft_substr\
+			ft_tolower		ft_toupper		ft_memccpy\
+			ft_lstnew		ft_lstadd_front	ft_lstsize\
+			ft_lstlast		ft_lstadd_back	ft_lstclear\
+			ft_lstiter		ft_lstmap		ft_lstdelone\
+			ft_printf 		ft_format_str	ft_format_int\
+			ft_format_hex	ft_add_width	ft_add_precision_nbr\
+			ft_unbr_to_base get_next_line
 
-SRC_B	=	ft_lstnew_bonus.c		ft_lstadd_front_bonus.c\
-			ft_lstsize_bonus.c		ft_lstlast_bonus.c\
-			ft_lstadd_back_bonus.c	ft_lstclear_bonus.c\
-			ft_lstiter_bonus.c		ft_lstmap_bonus.c\
-			ft_lstdelone_bonus.c
+SRC_DIR		=	src/
+OBJ_DIR		=	obj/
+INC_DIR		= 	include/
 
+SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(NAMES)))
+OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(NAMES)))
+D_FILES		=	$(addprefix $(OBJ_DIR), $(addsuffix .d, $(NAMES)))
 
-OBJ		=	$(SRC:.c=.o)
-OBJ_B	=	$(SRC_B:.c=.o)
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -O3
+AR			=   ar rcs
 
-D_FILES =	${SRC:.c=.d} ${SRC_B:.c=.d}
-
-CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
-OPFLAGS	=	-O2
+MD			=	mkdir -p
 
 all: ${NAME}
 
 $(NAME): ${OBJ}
-			ar rcs ${NAME} $?
+			$(AR) ${NAME} ${OBJ}
 
-bonus: 
-			@make OBJ="${OBJ_B}" all
+$(OBJ_DIR):
+			${MD} $(OBJ_DIR)
 
-%.o: %.c ${HDR}
-			$(CC) $(CFLAGS) ${OPFLAGS} -c $< -o $@ -MD
+$(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
+			$(CC) $(CFLAGS) -c $< -I$(INC_DIR) -o $@ -MD
 
 include $(wildcard $(D_FILES))
 
 clean:
-			@rm -f ${OBJ} ${OBJ_B} $(D_FILES)
+			rm -f ${OBJ} ${OBJ_B} $(D_FILES)
 
 fclean:	clean
-			@rm -f ${TRGT}
+			rm -f ${NAME}
 
 re:	fclean all
 

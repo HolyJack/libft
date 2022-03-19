@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 19:33:37 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/22 19:45:29 by ejafer           ###   ########.fr       */
+/*   Updated: 2021/10/14 21:50:36 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	slen = ft_strlen(s);
 	if (start > slen)
 		len = 0;
-	if (slen < len)
-		len = slen;
 	tmp = (char *) malloc(sizeof(char) * (len + 1));
 	if (tmp == NULL)
 		return (NULL);

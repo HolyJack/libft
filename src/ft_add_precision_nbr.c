@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_add_precision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 15:42:07 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/25 18:23:18 by ejafer           ###   ########.fr       */
+/*   Created: 2022/03/19 19:11:19 by ejafer            #+#    #+#             */
+/*   Updated: 2022/03/19 19:11:19 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_add_precision_nbr(char *str, int precision)
 {
-	ft_memset(s, 0, n);
+	char	*tmp;
+
+	while (ft_strlen(str) < precision)
+	{
+		tmp = malloc(sizeof(char) * (ft_strlen(str) + 2));
+		tmp[0] = '0';
+		ft_strlcpy(tmp + 1, str, ft_strlen(str) + 1);
+		free(str);
+		str = tmp;
+	}
+	return (str);
 }
