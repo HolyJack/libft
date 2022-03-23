@@ -6,13 +6,13 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:36:58 by ejafer            #+#    #+#             */
-/*   Updated: 2022/01/08 20:41:43 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:10:40 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin_char(char *str, char c)
+char	*ft_strjoin_char(char *str, char c)
 {
 	char	*tmp;
 
@@ -24,14 +24,14 @@ char *ft_strjoin_char(char *str, char c)
 	return (tmp);
 }
 
-void ft_new_format(t_data *data)
+void	ft_new_format(t_data *data)
 {
 	data->prc = 0;
 	data->wdt = 0;
 	data->ptr = 0;
 }
 
-void ft_parse_format(t_data *data)
+void	ft_parse_format(t_data *data)
 {
 	ft_new_format(data);
 	data->i++;
@@ -46,13 +46,14 @@ void ft_parse_format(t_data *data)
 		{
 			if (data->ptr)
 				data->prc = data->prc * 10 + data->format[data->i] - '0';
-			else 
+			else
 				data->wdt = data->wdt * 10 + data->format[data->i] - '0';
 			(data->i)++;
 		}
 	}
 }
-void ft_make_str_from_format(t_data *data)
+
+void	ft_make_str_from_format(t_data *data)
 {
 	char	*str;
 	char	*tmp;

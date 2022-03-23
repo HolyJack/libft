@@ -6,13 +6,13 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:55:24 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/19 18:55:24 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:13:14 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *ft_strjoin_char_front(char *str, char c)
+static char	*ft_strjoin_char_front(char *str, char c)
 {
 	char	*tmp;
 

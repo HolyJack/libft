@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:52:41 by ejafer            #+#    #+#             */
-/*   Updated: 2022/01/08 20:51:52 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:11:40 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ typedef struct s_data
 	const char	*format;
 	int			i;
 	char		*result;
-} t_data;
+}	t_data;
 
 int		ft_printf(const char *format, ...);
 char	*ft_format_str(t_data *data, char *str);

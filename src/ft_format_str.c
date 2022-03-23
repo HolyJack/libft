@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:34:41 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/19 18:34:41 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:12:13 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*ft_add_precision_str(char *str, int precision)
 	return (str);
 }
 
-char *ft_format_str(t_data *data, char *inp)
+char	*ft_format_str(t_data *data, char *inp)
 {
 	char	*str;
 
